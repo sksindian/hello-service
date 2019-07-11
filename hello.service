@@ -1,0 +1,14 @@
+[Unit]
+Description=Hello Service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+Environment=FLASK_CONFIG=production
+Environment=FLASK_APP=hello.py
+ExecStart=/opt/hello/hello.sh start
+ExecStop=/opt/hello/hello.sh stop
+WorkingDirectory=/opt/hello
+
+[Install]
+WantedBy=multi-user.target
