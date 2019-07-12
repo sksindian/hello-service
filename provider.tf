@@ -13,3 +13,10 @@ data "template_file" "init" {
     region = "${var.region}"
   }
 }
+
+provider "aws" {
+  region     = "us-east-2"
+  access_key = "${var.access}"
+  secret_key = "${var.secret}"
+  alias = "east-2"
+}

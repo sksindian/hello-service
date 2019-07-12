@@ -3,6 +3,7 @@ resource "aws_s3_bucket_object" "object_service" {
   key    = "hello.service"
   source = "hello.service"
   etag = "${filemd5("hello.service")}"
+  provider = "aws.east-2"
 }
 
 resource "aws_s3_bucket_object" "object_sh" {
@@ -10,6 +11,7 @@ resource "aws_s3_bucket_object" "object_sh" {
   key    = "hello.sh"
   source = "hello.sh"
   etag = "${filemd5("hello.sh")}"
+  provider = "aws.east-2"
 }
 
 resource "aws_s3_bucket_object" "object_py" {
@@ -17,4 +19,5 @@ resource "aws_s3_bucket_object" "object_py" {
   key    = "hello.py"
   source = "hello.py"
   etag = "${filemd5("hello.py")}"
+  provider = "aws.east-2"
 }
