@@ -31,7 +31,7 @@ resource "aws_lb_listener" "list" {
    }
    load_balancer_arn = "${aws_alb.alb.arn}"
    port = 8080
-   depends_on = ["aws_instance.hello_server"]
+   depends_on = ["aws_eip_association.ec2_eip"]
 }
 
 ##security group allow 8080 from outside world and inside private vlan full connectiivty

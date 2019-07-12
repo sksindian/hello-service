@@ -40,3 +40,13 @@ resource "aws_instance" "hello_server"{
   }
   depends_on = ["aws_route_table_association.subnet_to_routable"]
 }
+resource "aws_eip" "public-server-eip" {
+  vpc = true
+  count = "${var.instance_number}"
+}
+
+resource "aws_eip_association" "ec2_eip" {
+  instance_id = "${element(aws_instance.hello_server.*.id, count.index)}"
+  allocation_id = "${element(aws_eip.public-server-eip.*.id, count.index)}"
+  count = "${var.instance_number}"
+}
