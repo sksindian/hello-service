@@ -27,10 +27,10 @@ variable region {
 }
 
 variable access {
-  default = "AKIAUGZ6US2C2ANGM6KO"
+  default = "xxxxxxxxxxxx"
 }
 
 variable secret {
-  default = "6XjSX5We7BxS7aMkY2glCeLEQ2Ve9Mpe7qdwIHia"
+  default = "xxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 
