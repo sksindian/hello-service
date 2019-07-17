@@ -15,14 +15,6 @@ resource "aws_lb_target_group" "targ" {
    vpc_id = "${aws_vpc.hello_vpc.id}"
 }
 
-#Attah the instances to the target 
-resource "aws_lb_target_group_attachment" "attach_web" {
-   target_group_arn = "${aws_lb_target_group.targ.arn}"
-   target_id = "${element(aws_instance.hello_server.*.id, count.index)}"
-   port = 8080
-   count = "${var.instance_number}"
-}
-
 #Load Balancer Listener resource.
 resource "aws_lb_listener" "list" {
    default_action {
@@ -31,7 +23,6 @@ resource "aws_lb_listener" "list" {
    }
    load_balancer_arn = "${aws_alb.alb.arn}"
    port = 8080
-   depends_on = ["aws_eip_association.ec2_eip"]
 }
 
 ##security group allow 8080 from outside world and inside private vlan full connectiivty

@@ -26,11 +26,15 @@ variable region {
   default = "us-east-2"
 }
 
-variable access {
-  default = "xxxxxxxxxxxx"
+variable access {}
+
+variable secret {}
+
+variable max_num {
+  default = 3
 }
 
-variable secret {
-  default = "xxxxxxxxxxxxxxxxxxxxxxxxx"
+variable min_num {
+  default = 3
 }
 
