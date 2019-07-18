@@ -21,7 +21,8 @@ GET Output
 >>>
 
 Header information 'Origin-Instance'
-[root@ip-172-31-15-94 ~]# curl -i http://hello-lb-493015950.us-east-2.elb.amazonaws.com:8080
+
+# curl -i http://hello-lb-493015950.us-east-2.elb.amazonaws.com:8080
 HTTP/1.1 200 OK
 Date: Thu, 18 Jul 2019 01:40:16 GMT
 Content-Type: application/json
