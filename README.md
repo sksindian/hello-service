@@ -13,10 +13,7 @@ More information and documents: Please refer the "pdf" in the same repo
 
 
 GET Output
-[root@ip-172-31-15-94 ~]# python
-Python 2.7.16 (default, Jun 19 2019, 17:20:54)
-[GCC 7.3.1 20180303 (Red Hat 7.3.1-5)] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
+
 >>> import requests
 >>> abc = requests.get("http://hello-lb-493015950.us-east-2.elb.amazonaws.com:8080")
 >>> abc.json()
